@@ -1,0 +1,204 @@
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   renamed_file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        EOD.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git add -A
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   EOD.txt
+        modified:   renamed_file.txt
+
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git commit -m "text updated"
+[master 79573c8] text updated
+ 2 files changed, 294 insertions(+), 1 deletion(-)
+ create mode 100644 EOD.txt
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git remote add origin
+git@github.com:sanskrititrh/practicerepo.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+bash: git@github.com:sanskrititrh/practicerepo.git: No such file or directory
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git remote add origin git@github.com:sanskrititrh/practicerepo.git
+error: remote origin already exists.
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git remote add origin1 git@github.com:sanskrititrh/practicerepo.git
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git push -u origin master
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ ssh-keygen -t ed25519 -C "sanskriti.dhakad@therapidhire.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/hp/.ssh/id_ed25519):
+/c/Users/hp/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/hp/.ssh/id_ed25519
+Your public key has been saved in /c/Users/hp/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:JCNylyp3r0YXMxxwt5q+cWNHKREFYvZDjWxZqAZukvI sanskriti.dhakad@therapidhire.com
+The key's randomart image is:
++--[ED25519 256]--+
+|      ..=.=Oo    |
+|      .=.=*o.    |
+|  . oo=o.+=      |
+|  .oo+o+Bo o .   |
+|  .ooo..S+. o    |
+|   oE..o.  o     |
+|     . .+ + .    |
+|      .. = o     |
+|     .. .        |
++----[SHA256]-----+
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ eval "$(ssh-agent -s)"
+Agent pid 1577
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ ssh-add ~/.ssh/id_ed25519
+Identity added: /c/Users/hp/.ssh/id_ed25519 (sanskriti.dhakad@therapidhire.com)
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ clip < ~/.ssh/id_ed25519.pub
+
+"after this command the server will copy the SSH key automatically"
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git push -u origin1 master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 8.33 KiB | 1.04 MiB/s, done.
+Total 11 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:sanskrititrh/practicerepo.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin1/master'.
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin1/master'.
+
+nothing to commit, working tree clean
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin1/master'.
+
+nothing to commit, working tree clean
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin1/master'.
+
+nothing to commit, working tree clean
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin1/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   EOD.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git add .
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin1/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   EOD.txt
+
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git commit -m "eod update"
+[master 1eac397] eod update
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin1/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git push
+
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:sanskrititrh/practicerepo.git
+   79573c8..1eac397  master -> master
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin1/master'.
+
+nothing to commit, working tree clean
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$
