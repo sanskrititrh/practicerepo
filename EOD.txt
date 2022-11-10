@@ -1,0 +1,11 @@
+EOD:
+LOGIN:10:20
+LOGOUT:7:15
+1)3 stage architecture of git.
+2)tracking the git project.
+3)cloning a remote repositry from github to pc.
+4)file status lifecycle.
+5)ignoring files in git.
+6)showing changes between commit and stagging.
+7)commands to skip the stagging area
+8)moving and renaming files.
