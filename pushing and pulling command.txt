@@ -200,5 +200,95 @@ Your branch is up to date with 'origin1/master'.
 
 nothing to commit, working tree clean
 
+
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git branch new
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git checkout master
+Already on 'master'
+Your branch is up to date with 'origin1/master'.
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git checkout new
+Switched to branch 'new'
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git pull origin1 main
+fatal: couldn't find remote ref main
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin1/master'.
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git checkout new
+Switched to branch 'new'
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git pull origin master
+From github.com:sanskrititrh/practicerepo
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+Already up to date.
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git status
+On branch new
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        pushing and pulling command.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git add .
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git status
+On branch new
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   pushing and pulling command.txt
+
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git commit -m "pushing and puling command"
+[new 72917c1] pushing and puling command
+ 1 file changed, 204 insertions(+)
+ create mode 100644 pushing and pulling command.txt
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git status
+On branch new
+nothing to commit, working tree clean
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (new)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin1/master'.
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git merge new
+Updating 1eac397..72917c1
+Fast-forward
+ pushing and pulling command.txt | 204 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 204 insertions(+)
+ create mode 100644 pushing and pulling command.txt
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin1/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
+$ ^C
+
 hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
 $
+
