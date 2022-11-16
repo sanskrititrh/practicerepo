@@ -1,4 +1,4 @@
-commamds of git
+
 hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice
 $ git status
 fatal: not a git repository (or any of the parent directories): .git

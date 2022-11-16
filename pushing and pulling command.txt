@@ -1,5 +1,3 @@
-pushing and puling comands
-
 hp@DESKTOP-K1H14P5 MINGW64 ~/OneDrive/Desktop/Git Practice (master)
 $ git status
 On branch master
